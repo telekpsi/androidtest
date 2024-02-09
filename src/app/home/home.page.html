@@ -1,0 +1,3 @@
+<p>file test</p>
+<input #fileInput type="file" (change)="handleFileInput(fileInput)" [hidden]="true" multiple/>
+<ion-icon name="ellipsis-horizontal" id="document-actions" (click)="triggerFileOpen(fileInput)"></ion-icon>
