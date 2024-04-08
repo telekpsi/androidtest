@@ -1,3 +1,9 @@
-<p>file test</p>
-<input #fileInput type="file" (change)="handleFileInput(fileInput)" [hidden]="true" multiple/>
-<ion-icon name="ellipsis-horizontal" id="document-actions" (click)="triggerFileOpen(fileInput)"></ion-icon>
+<ion-content>
+    <p>Text-Zoom Test</p>
+    <p>Current Platform: {{device}}</p>
+    <p>Result: {{result}}</p>
+    <p>Preferred Result: {{preferredResult}}</p>
+    <p>file test</p>
+    <input #fileInput type="file" (change)="handleFileInput(fileInput)" [hidden]="true" multiple/>
+    <ion-icon name="ellipsis-horizontal" id="document-actions" (click)="triggerFileOpen(fileInput)"></ion-icon>
+</ion-content>

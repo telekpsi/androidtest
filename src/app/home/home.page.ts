@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TextZoom, GetPreferredResult, GetResult, SetOptions } from '@capacitor/text-zoom'
+import { Device } from '@capacitor/device';
 
 @Component({
   selector: 'app-home',
@@ -6,8 +8,21 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  preferredResult: number = 0;
+  result: number = 0;
+  device: string = "";
 
-  constructor() {}
+  constructor() {
+    TextZoom.getPreferred().then(preferred => {
+      this.preferredResult = preferred.value;
+    });
+    TextZoom.get().then(result => {
+      this.result = result.value;
+    });
+    Device.getInfo().then(info => {
+      this.device = info.platform;
+    })
+  }
 
   triggerFileOpen(fileInput: HTMLInputElement) {
     fileInput.click();
