@@ -11,6 +11,8 @@ export class HomePage {
   preferredResult: number = 0;
   result: number = 0;
   device: string = "";
+  showImage = false;
+  imageUrl = "";
 
   constructor() {
     TextZoom.getPreferred().then(preferred => {
@@ -22,6 +24,11 @@ export class HomePage {
     Device.getInfo().then(info => {
       this.device = info.platform;
     })
+  }
+
+  tryShowImage() {
+    this.imageUrl = "https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_272x92dp.png";
+    this.showImage = true;
   }
 
   triggerFileOpen(fileInput: HTMLInputElement) {

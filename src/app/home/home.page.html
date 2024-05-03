@@ -3,6 +3,9 @@
     <p>Current Platform: {{device}}</p>
     <p>Result: {{result}}</p>
     <p>Preferred Result: {{preferredResult}}</p>
+    <p>image test</p>
+    <ion-button (click)="tryShowImage()">Try to Show Image</ion-button>
+    <ion-img *ngIf="showImage" src={{imageUrl}}></ion-img>
     <p>file test</p>
     <input #fileInput type="file" (change)="handleFileInput(fileInput)" [hidden]="true" multiple/>
     <ion-icon name="ellipsis-horizontal" id="document-actions" (click)="triggerFileOpen(fileInput)"></ion-icon>
